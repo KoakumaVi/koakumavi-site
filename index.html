@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KoakumaVi 一頁式網站</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+
+    .section {
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 28px;
+      color: #FF99CC;
+      margin-bottom: 10px;
+    }
+
+    .section p {
+      color: #ccc;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    iframe {
+      width: 100%;
+      border: none;
+    }
+
+    .canva-embed {
+      height: 100vh;
+    }
+
+    .photo-wall {
+      height: 800px;
+      max-width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .photo-wall {
+        height: 600px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- C站 Canva 主體網站 -->
+  <iframe class="canva-embed" src="https://koakumavi.my.canva.site/" allowfullscreen></iframe>
+
+  <!-- B站 電視牆區塊 -->
+  <section class="section">
+    <h2>📺 電視牆作品展示</h2>
+    <p>點擊任意影片封面，可直接前往 TikTok 觀看完整作品。</p>
+    <iframe class="photo-wall" src="https://display.socialwalls.com/167216" allowfullscreen></iframe>
+  </section>
+
+</body>
+</html>
