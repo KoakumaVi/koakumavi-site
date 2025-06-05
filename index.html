@@ -4,64 +4,81 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KoakumaVi 一頁式網站</title>
+  <title>KoakumaVi</title>
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       background-color: #000;
-      color: #fff;
-      font-family: 'Helvetica Neue', sans-serif;
+      font-family: 'Orbitron', sans-serif;
+      color: #D3A4F9;
     }
 
-    .section {
-      padding: 40px 0;
-      text-align: center;
-    }
-
-    .section h2 {
-      font-size: 28px;
-      color: #FF99CC;
-      margin-bottom: 10px;
-    }
-
-    .section p {
-      color: #ccc;
-      font-size: 16px;
-      margin-bottom: 20px;
+    section {
+      width: 100%;
+      border-top: 1px solid #FF5EDB33;
     }
 
     iframe {
       width: 100%;
-      border: none;
-    }
-
-    .canva-embed {
       height: 100vh;
+      border: none;
+      display: block;
     }
 
-    .photo-wall {
-      height: 800px;
-      max-width: 100%;
+    .tv-wall {
+      padding: 3em 1em;
+      text-align: center;
+    }
+
+    .tv-wall h2 {
+      font-size: 2.5em;
+      color: #D3A4F9;
+      text-shadow: 0 0 4px #FF99CC, 0 0 8px #FF5EDB;
+      margin-bottom: 0.5em;
+    }
+
+    .tv-wall p {
+      font-size: 1.3em;
+      color: #D3A4F9;
+      text-shadow: 0 0 3px #FF99CC, 0 0 5px #FF99CC;
+      margin-bottom: 1em;
     }
 
     @media (max-width: 768px) {
-      .photo-wall {
-        height: 600px;
+      .tv-wall h2 {
+        font-size: 2em;
+      }
+      .tv-wall p {
+        font-size: 1.1em;
       }
     }
   </style>
 </head>
 <body>
+  <section><iframe src="https://www.canva.com/design/DAGpbzBZkDM/9AQoixyEZ_kv3JuJvqwQcw/view?embed"></iframe></section>
+  <section><iframe src="https://tally.so/r/wvgRGl"></iframe></section>
+  <section><iframe src="https://www.canva.com/design/DAGo9NQCo5M/NZdA2jbhnSpEpJL9pTSLAg/view?embed"></iframe></section>
 
-  <!-- C站 Canva 主體網站 -->
-  <iframe class="canva-embed" src="https://koakumavi.my.canva.site/" allowfullscreen></iframe>
-
-  <!-- B站 電視牆區塊 -->
-  <section class="section">
-    <h2>📺 電視牆作品展示</h2>
-    <p>點擊任意影片封面，可直接前往 TikTok 觀看完整作品。</p>
-    <iframe class="photo-wall" src="https://display.socialwalls.com/167216" allowfullscreen></iframe>
+  <section class="tv-wall">
+    <h2>🎵 MV剪輯亮點介紹（Editing Highlights）</h2>
+    <p>每支影片皆為客製剪輯，搭配音樂節奏與品牌風格進行特效製作：</p>
+    <ul style="text-align: left; max-width: 800px; margin: 0 auto 1em; list-style: none; padding: 0; font-size: 1.2em; line-height: 1.4;">
+      <li>✨ 雙屏影音同步（Split-screen sync visuals）</li>
+      <li>✨ 節奏視覺特效（Flash, bounce, glow, zoom FX）</li>
+      <li>✨ 動態字幕 & 歌詞同步（Animated subtitle timing）</li>
+      <li>✨ 綜藝字卡字幕（Variety show-style popup text）</li>
+      <li>✨ 濾鏡與色調風格化（Custom LUTs, mood coloring）</li>
+      <li>✨ 轉場特效（Whip pan, glitch, zoom transitions）</li>
+      <li>✨ 音樂互動剪輯（Audio-reactive animation beats）</li>
+    </ul>
+    <iframe src="https://display.socialwalls.com/167216"></iframe>
   </section>
 
+  <section><iframe src="https://www.canva.com/design/DAGoza5UVIQ/hHg8goGn96nTLWX-ZztDtw/view?embed"></iframe></section>
 </body>
 </html>
