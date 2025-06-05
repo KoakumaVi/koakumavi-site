@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
@@ -11,74 +10,59 @@
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
-      background-color: #000;
+      background: black;
+      color: white;
       font-family: 'Orbitron', sans-serif;
-      color: #D3A4F9;
+      overflow-x: hidden;
     }
-
-    section {
-      width: 100%;
-      border-top: 1px solid #FF5EDB33;
+    .section {
+      width: 100vw;
+      height: 100vh;
+      border-bottom: 1px solid #444;
     }
-
     iframe {
       width: 100%;
-      height: 100vh;
+      height: 100%;
       border: none;
       display: block;
     }
-
-    .tv-wall {
-      padding: 3em 1em;
-      text-align: center;
-    }
-
-    .tv-wall h2 {
-      font-size: 2.5em;
+    .wall-title {
+      padding: 2em 1em 0.5em;
+      font-size: 2em;
       color: #D3A4F9;
       text-shadow: 0 0 4px #FF99CC, 0 0 8px #FF5EDB;
-      margin-bottom: 0.5em;
+      text-align: center;
     }
-
-    .tv-wall p {
-      font-size: 1.3em;
-      color: #D3A4F9;
-      text-shadow: 0 0 3px #FF99CC, 0 0 5px #FF99CC;
+    .wall-desc {
+      text-align: center;
+      color: #ccc;
+      font-size: 1em;
       margin-bottom: 1em;
-    }
-
-    @media (max-width: 768px) {
-      .tv-wall h2 {
-        font-size: 2em;
-      }
-      .tv-wall p {
-        font-size: 1.1em;
-      }
     }
   </style>
 </head>
 <body>
-  <section><iframe src="https://www.canva.com/design/DAGpbzBZkDM/9AQoixyEZ_kv3JuJvqwQcw/view?embed"></iframe></section>
-  <section><iframe src="https://tally.so/r/wvgRGl"></iframe></section>
-  <section><iframe src="https://www.canva.com/design/DAGo9NQCo5M/NZdA2jbhnSpEpJL9pTSLAg/view?embed"></iframe></section>
+  <div class="section">
+    <iframe src="https://www.canva.com/design/DAGpbzBZkDM/9AQoixyEZ_kv3JuJvqwQcw/view?embed" loading="lazy" allowfullscreen></iframe>
+  </div>
 
-  <section class="tv-wall">
-    <h2>🎵 MV剪輯亮點介紹（Editing Highlights）</h2>
-    <p>每支影片皆為客製剪輯，搭配音樂節奏與品牌風格進行特效製作：</p>
-    <ul style="text-align: left; max-width: 800px; margin: 0 auto 1em; list-style: none; padding: 0; font-size: 1.2em; line-height: 1.4;">
-      <li>✨ 雙屏影音同步（Split-screen sync visuals）</li>
-      <li>✨ 節奏視覺特效（Flash, bounce, glow, zoom FX）</li>
-      <li>✨ 動態字幕 & 歌詞同步（Animated subtitle timing）</li>
-      <li>✨ 綜藝字卡字幕（Variety show-style popup text）</li>
-      <li>✨ 濾鏡與色調風格化（Custom LUTs, mood coloring）</li>
-      <li>✨ 轉場特效（Whip pan, glitch, zoom transitions）</li>
-      <li>✨ 音樂互動剪輯（Audio-reactive animation beats）</li>
-    </ul>
-    <iframe src="https://display.socialwalls.com/167216"></iframe>
-  </section>
+  <div class="section">
+    <iframe src="https://tally.so/r/wvgRGl" loading="lazy" allowfullscreen></iframe>
+  </div>
 
-  <section><iframe src="https://www.canva.com/design/DAGoza5UVIQ/hHg8goGn96nTLWX-ZztDtw/view?embed"></iframe></section>
+  <div class="section">
+    <iframe src="https://www.canva.com/design/DAGo9NQCo5M/NZdA2jbhnSpEpJL9pTSLAg/view?embed" loading="lazy" allowfullscreen></iframe>
+  </div>
+
+  <div class="section">
+    <div class="wall-title">📺 互動電視牆展示</div>
+    <div class="wall-desc">實時展示最新 TikTok 動態剪輯作品，點擊可放大觀看。</div>
+    <iframe src="https://display.socialwalls.com/167216" loading="lazy" allowfullscreen></iframe>
+  </div>
+
+  <div class="section">
+    <iframe src="https://www.canva.com/design/DAGoza5UVIQ/hHg8goGn96nTLWX-ZztDtw/view?embed" loading="lazy" allowfullscreen></iframe>
+  </div>
 </body>
 </html>
