@@ -106,13 +106,11 @@
       border: none;
       width: 100%;
       aspect-ratio: 9 / 16;
-      /* 隱藏滾動條 */
       overflow: hidden;
-      scrollbar-width: none; /* Firefox */
-      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none;
+      -ms-overflow-style: none;
     }
 
-    /* 隱藏Webkit瀏覽器的滾動條 */
     .waterfall-video iframe::-webkit-scrollbar {
       display: none;
     }
@@ -137,22 +135,44 @@
         font-size: 1.3em;
       }
       
-      /* 手機版瀑布流調整 */
-      .waterfall-container {
-        flex-direction: column;
-        align-items: center;
-        height: auto;
-        gap: 5px;
+      /* 手機橫屏模式 - 保持電腦版瀑布流 */
+      @media (orientation: landscape) {
+        .waterfall-container {
+          height: 70vh;
+        }
+        .waterfall-video {
+          width: 100%;
+        }
       }
-      .waterfall-column {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        animation: none;
-      }
-      .waterfall-video {
-        width: 45vw;
-        margin: 5px;
+      
+      /* 手機直屏模式 - 改為橫向滑動 */
+      @media (orientation: portrait) {
+        .waterfall-container {
+          height: 60vh;
+          overflow-x: auto;
+          overflow-y: hidden;
+          justify-content: flex-start;
+          padding-bottom: 20px;
+          scroll-snap-type: x mandatory;
+        }
+        
+        .waterfall-column {
+          height: 100%;
+          flex-direction: column;
+          animation: none;
+          margin-right: 15px;
+          min-width: 70vw;
+          scroll-snap-align: start;
+        }
+        
+        .waterfall-video {
+          width: 70vw;
+          margin: 0 0 15px 0;
+        }
+        
+        .waterfall-container::-webkit-scrollbar {
+          display: none;
+        }
       }
     }
   </style>
@@ -182,7 +202,7 @@
       <li>✨ 音樂互動剪輯</li>
     </ul>
     <div class="waterfall-container">
-      <!-- Column 1 - 速度加快為30s -->
+      <!-- Column 1 -->
       <div class="waterfall-column" style="--speed: 30s">
         <div class="waterfall-video">
           <iframe src="https://www.tiktok.com/embed/v2/7486113011510349064"></iframe>
@@ -198,7 +218,7 @@
         </div>
       </div>
 
-      <!-- Column 2 - 速度加快為45s -->
+      <!-- Column 2 -->
       <div class="waterfall-column" style="--speed: 45s">
         <div class="waterfall-video">
           <iframe src="https://www.tiktok.com/embed/v2/7517651853979503873"></iframe>
@@ -214,7 +234,7 @@
         </div>
       </div>
 
-      <!-- Column 3 - 速度加快為35s -->
+      <!-- Column 3 -->
       <div class="waterfall-column" style="--speed: 35s">
         <div class="waterfall-video">
           <iframe src="https://www.tiktok.com/embed/v2/7483546545187753234"></iframe>
@@ -229,26 +249,10 @@
           <iframe src="https://www.tiktok.com/embed/v2/7520629440058117393"></iframe>
         </div>
       </div>
-
-      <!-- Column 4 - 速度加快為40s -->
-      <div class="waterfall-column" style="--speed: 40s">
-        <div class="waterfall-video">
-          <iframe src="https://www.tiktok.com/embed/v2/7420461818704858373"></iframe>
-        </div>
-        <div class="waterfall-video">
-          <iframe src="https://www.tiktok.com/embed/v2/7484272356714695943"></iframe>
-        </div>
-        <div class="waterfall-video">
-          <iframe src="https://www.tiktok.com/embed/v2/7439719399793184007"></iframe>
-        </div>
-        <div class="waterfall-video">
-          <iframe src="https://www.tiktok.com/embed/v2/7485356301875252498"></iframe>
-        </div>
-      </div>
     </div>
   </section>
 
-  <!-- 👑 綜藝剪輯牆 -->
+  <!-- 👑 綜藝剪輯牆 (已同步修正) -->
   <section class="tv-wall">
     <h2>👑 綜藝剪輯亮點介紹（Variety Show Editing Highlights）</h2>
     <p>適合用於品牌開箱.活動花絮.店家介紹.人物訪談.YouTube Shorts.娛樂推廣等多元場合</p>
@@ -262,7 +266,7 @@
       <li>📢 角色語氣加強剪輯</li>
     </ul>
     <div class="waterfall-container">
-      <!-- Column 1 - 速度加快為25s -->
+      <!-- Column 1 -->
       <div class="waterfall-column" style="--speed: 25s">
         <div class="waterfall-video">
           <iframe src="https://www.tiktok.com/embed/v2/7512508303797259528"></iframe>
@@ -273,12 +277,9 @@
         <div class="waterfall-video">
           <iframe src="https://www.tiktok.com/embed/v2/7507646980928294151"></iframe>
         </div>
-        <div class="waterfall-video">
-          <iframe src="https://www.tiktok.com/embed/v2/7507262480977005832"></iframe>
-        </div>
       </div>
 
-      <!-- Column 2 - 速度加快為35s -->
+      <!-- Column 2 -->
       <div class="waterfall-column" style="--speed: 35s">
         <div class="waterfall-video">
           <iframe src="https://www.tiktok.com/embed/v2/7505039409021013256"></iframe>
@@ -289,12 +290,9 @@
         <div class="waterfall-video">
           <iframe src="https://www.tiktok.com/embed/v2/7416357505653329157"></iframe>
         </div>
-        <div class="waterfall-video">
-          <iframe src="https://www.tiktok.com/embed/v2/7425223744278318341"></iframe>
-        </div>
       </div>
 
-      <!-- Column 3 - 速度加快為30s -->
+      <!-- Column 3 -->
       <div class="waterfall-column" style="--speed: 30s">
         <div class="waterfall-video">
           <iframe src="https://www.tiktok.com/embed/v2/7425241222865800453"></iframe>
@@ -305,8 +303,18 @@
         <div class="waterfall-video">
           <iframe src="https://www.tiktok.com/embed/v2/7512508303797259528"></iframe>
         </div>
+      </div>
+
+      <!-- Column 4 -->
+      <div class="waterfall-column" style="--speed: 40s">
+        <div class="waterfall-video">
+          <iframe src="https://www.tiktok.com/embed/v2/7425223744278318341"></iframe>
+        </div>
         <div class="waterfall-video">
           <iframe src="https://www.tiktok.com/embed/v2/7508016883669437703"></iframe>
+        </div>
+        <div class="waterfall-video">
+          <iframe src="https://www.tiktok.com/embed/v2/7507646980928294151"></iframe>
         </div>
       </div>
     </div>
