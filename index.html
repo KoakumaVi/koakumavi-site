@@ -124,20 +124,22 @@
     /* 唯一新增：手機直式專用調整 */
     @media (max-width: 768px) and (orientation: portrait) {
       .waterfall-container {
-        height: 70vh; /* 調整高度 */
+        height: 70vh;
       }
-      .waterfall-video iframe {
-        aspect-ratio: 9/16; /* 強制保持9:16比例 */
+      /* 隱藏第三欄 */
+      .waterfall-column:nth-child(3) {
+        display: none;
       }
-      /* 確保綜藝區顯示 */
-      #variety-section .waterfall-container {
-        display: flex !important;
+      /* 調整現有兩欄寬度 */
+      .waterfall-column {
+        width: 48%;
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- 原始HTML結構完全保留 -->
   <!-- Hero 區塊 -->
   <section><iframe src="https://www.canva.com/design/DAGpbzBZkDM/9AQoixyEZ_kv3JuJvqwQcw/view?embed"></iframe></section>
 
@@ -187,7 +189,7 @@
         </div>
       </div>
 
-      <!-- Column 3 -->
+      <!-- Column 3 (手機直式時隱藏) -->
       <div class="waterfall-column" style="--speed: 45s">
         <div class="waterfall-video">
           <iframe src="https://www.tiktok.com/embed/v2/7483546545187753234"></iframe>
@@ -202,9 +204,9 @@
     </div>
   </section>
 
-  <!-- 👑 綜藝剪輯牆 (新增ID確保顯示) -->
-  <section id="variety-section" class="tv-wall">
-    <h2>👑 綜藝剪輯亮點介紹</h2>
+  <!-- 👑 綜藝剪輯牆 -->
+  <section class="tv-wall">
+    <h2>👑 綜藝剪輯亮點介紹（Variety Show Editing Highlights）</h2>
     <p>適合用於品牌開箱.活動花絮.店家介紹.人物訪談.YouTube Shorts.娛樂推廣等多元場合</p>
     <ul>
       <li>🎬 綜藝字卡設計</li>
@@ -242,7 +244,7 @@
         </div>
       </div>
 
-      <!-- Column 3 -->
+      <!-- Column 3 (手機直式時隱藏) -->
       <div class="waterfall-column" style="--speed: 40s">
         <div class="waterfall-video">
           <iframe src="https://www.tiktok.com/embed/v2/7425241222865800453"></iframe>
@@ -264,27 +266,11 @@
   <div class="orientation-note">📱 建議手機使用者請橫屏觀看以獲得更佳體驗</div>
 
   <script>
-    // 載入優化：保持比例+預載入
+    // 載入優化：保持比例
     document.addEventListener('DOMContentLoaded', function() {
       // 強制保持9:16比例
       document.querySelectorAll('.waterfall-video iframe').forEach(iframe => {
         iframe.style.aspectRatio = '9/16';
-      });
-      
-      // 預載入機制
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const iframe = entry.target;
-            if (!iframe.src.includes('autoplay')) {
-              iframe.src = iframe.src + '?autoplay=0';
-            }
-          }
-        });
-      }, { threshold: 0.1 });
-      
-      document.querySelectorAll('.waterfall-video iframe').forEach(iframe => {
-        observer.observe(iframe);
       });
     });
   </script>
