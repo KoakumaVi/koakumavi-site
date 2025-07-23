@@ -116,21 +116,33 @@
       display: none;
     }
 
+    /* Vimeo專用適配 */
+    .vimeo-container {
+      position: relative;
+      padding-top: 177.78%; /* 強制9:16比例 */
+    }
+    
+    .vimeo-iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
     @keyframes scrollUp {
       0% { transform: translateY(0); }
       100% { transform: translateY(-50%); }
     }
 
-    /* 唯一新增：手機直式專用調整 */
+    /* 手機直式專用調整 */
     @media (max-width: 768px) and (orientation: portrait) {
       .waterfall-container {
         height: 70vh;
       }
-      /* 隱藏第三欄 */
       .waterfall-column:nth-child(3) {
         display: none;
       }
-      /* 調整現有兩欄寬度 */
       .waterfall-column {
         width: 48%;
       }
@@ -256,6 +268,87 @@
     </div>
   </section>
 
+  <!-- 💄 新增的美妝穿搭+AI特效區塊 -->
+  <section class="tv-wall">
+    <h2>💄 美妝穿搭時尚剪輯亮點介紹</h2>
+    <p>📌 適用於開箱展示、美妝教學、穿搭分享、日常 vlog、時尚穿搭變裝等主題影片</p>
+    <ul>
+      <li>🎤 口播內容同步畫面節奏：觀眾更容易吸收資訊，強化主角敘述</li>
+      <li>🌈 轉場搭配穿搭變裝/手勢點位：鏡頭轉換更具節奏感</li>
+      <li>🧼 畫面精修+柔霧濾鏡處理：提升膚質質感，襯托穿搭質地</li>
+      <li>🧠 關鍵資訊彈跳字卡搭配表情節奏：吸睛又易記</li>
+      <li>🧏‍♀️ 結尾設計專屬 Call To Action：引導觀眾留言、分享與關注，提高互動率</li>
+    </ul>
+    
+    <h2 style="margin-top:1.5em;">🎨 AI卡通人物、美容瘦身特效剪輯亮點介紹</h2>
+    <p>適用於虛擬角色、美顏穿搭展示、角色扮演、健康品牌推廣等主題</p>
+    <ul>
+      <li>🤖 AI卡通虛擬角色生成</li>
+      <li>✨ 瘦身塑形 & 自然特效調整</li>
+      <li>🎭 臉部追蹤 + 表情動畫強化角色感</li>
+      <li>🎬 與實拍穿插強化互動性</li>
+    </ul>
+    
+    <div class="waterfall-container">
+      <!-- Column 1 -->
+      <div class="waterfall-column" style="--speed: 38s">
+        <!-- Vimeo影片 -->
+        <div class="waterfall-video">
+          <div class="vimeo-container">
+            <iframe class="vimeo-iframe" 
+                    src="https://player.vimeo.com/video/1103698356?title=0&byline=0&portrait=0&color=ff5edb" 
+                    loading="lazy"
+                    allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+        
+        <!-- TikTok影片 -->
+        <div class="waterfall-video">
+          <iframe src="https://www.tiktok.com/embed/7529540403188485383" loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="waterfall-column" style="--speed: 42s">
+        <!-- TikTok影片 -->
+        <div class="waterfall-video">
+          <iframe src="https://www.tiktok.com/embed/7529540403188485383" loading="lazy"></iframe>
+        </div>
+        
+        <!-- Vimeo影片 -->
+        <div class="waterfall-video">
+          <div class="vimeo-container">
+            <iframe class="vimeo-iframe" 
+                    src="https://player.vimeo.com/video/1103698356?title=0&byline=0&portrait=0&color=d3a4f9" 
+                    loading="lazy"
+                    allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 3 (手機直式時隱藏) -->
+      <div class="waterfall-column" style="--speed: 45s">
+        <!-- Vimeo影片 -->
+        <div class="waterfall-video">
+          <div class="vimeo-container">
+            <iframe class="vimeo-iframe" 
+                    src="https://player.vimeo.com/video/1103698356?title=0&byline=0&portrait=0&color=ff99cc" 
+                    loading="lazy"
+                    allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+        
+        <!-- TikTok影片 -->
+        <div class="waterfall-video">
+          <iframe src="https://www.tiktok.com/embed/7529540403188485383" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- MV分類頁 -->
   <section><iframe src="https://www.canva.com/design/DAGoza5UVIQ/hHg8goGn96nTLWX-ZztDtw/view?embed"></iframe></section>
 
@@ -269,6 +362,20 @@
       document.querySelectorAll('.waterfall-video iframe').forEach(iframe => {
         iframe.style.aspectRatio = '9/16';
       });
+      
+      // Vimeo高度適配
+      const resizeVimeo = () => {
+        const iframes = document.querySelectorAll('.waterfall-video iframe');
+        if(iframes.length > 0) {
+          const iframeHeight = iframes[0].clientHeight;
+          document.querySelectorAll('.vimeo-container').forEach(container => {
+            container.style.minHeight = `${iframeHeight}px`;
+          });
+        }
+      };
+      
+      resizeVimeo();
+      window.addEventListener('resize', resizeVimeo);
     });
   </script>
 </body>
